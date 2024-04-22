@@ -7,11 +7,22 @@
 ## add-users-tasks-table&data
 まずはユーザー一覧とタスク一覧について、テーブルとダミーデータの作成
 
+日本語ダミーにしたい場合は
+- https://qiita.com/Sho-taro/items/feaaf025df15ab206994 の設定をする、
+- config/app.phpと.envの`FAKER_LOCALE=ja_JP`にする
+- `sail down`, `sail up -d`でコンテナ立上げ直すなどする
+
+また、ローカルで画面確認時には、`npm run dev`でnodeのサーバーを立ち上げておく。
+tailwindのコンパイルを即時反映させるため。（これをやらないと、画面に修正が即時反映されない）
+
 ## add-userlist-view
 ダッシュボードにユーザーリストの表示
 
 ## add-tasklist-view
 ナビゲーションにtab追加、タスクリストのビュー追加、表示
+
+## add-tasknumber-view
+ナビゲーションにtab追加、タスク残数のビュー追加、表示
 
 
 

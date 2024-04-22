@@ -21,5 +21,7 @@ Route::get('/tasks',  [TaskController::class, 'index'])
     ->middleware(['auth', 'verified'])
     ->name('tasks');
 
-
+Route::get('/taskcounts',  [TaskController::class, 'task_counts'])
+    ->middleware(['auth', 'verified'])
+    ->name('taskcounts');
 require __DIR__.'/auth.php';

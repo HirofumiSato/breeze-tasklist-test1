@@ -18,6 +18,29 @@ class TaskController extends Controller
         return view('tasks', ['tasks' => $tasks]); // ビューにユーザーデータを渡します
     }
 
+//task_countsを追記
+public function task_counts()
+{
+    $tasks = Task::join('users', 'tasks.user_id', '=', 'users.id')
+                 ->select('tasks.*', 'users.name')
+                 ->get();
+       
+
+    $taskCountsData = [];
+    foreach ($tasks as $task) {
+        $taskCountsData[$task->name] = [
+            'remaining_tasks' => Task::where('user_id', $task->user_id)
+                                        ->where('completed', '!=', '1')
+                                        ->count(),
+            'completed_tasks' => Task::where('user_id', $task->user_id)
+                                        ->where('completed', '!=', '0')
+                                        ->count()
+        ];
+    }
+    //dd($taskCountsData); 渡した後のデータ見たいときはコメントアウト外す
+    return view('taskcounts', ['taskCountsData' => $taskCountsData]);
+}
+
     /**
      * Show the form for creating a new resource.
      */
