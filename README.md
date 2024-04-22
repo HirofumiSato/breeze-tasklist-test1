@@ -1,3 +1,22 @@
+# 見方
+上からのブランチの順番で作成している
+詳細は（あれば）ブランチごとに記載
+
+# ブランチ
+
+## add-users-tasks-table&data
+まずはユーザー一覧とタスク一覧について、テーブルとダミーデータの作成
+
+## add-userlist-view
+ダッシュボードにユーザーリストの表示
+
+
+
+
+
+
+
+
 <p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
 
 <p align="center">
